@@ -1,9 +1,9 @@
 import {  useState } from 'react'
-import './index.css'
+import '../../index.css'
 import { MovieCard } from './MovieCard'
-import { useDebounce } from './hooks/useDebounce'
+import { useDebounce } from '../../hooks/useDebounce'
 import { MOVIES } from './movies.data'
-import { useTheme } from './hooks/useTheme'
+import { useTheme } from '../../hooks/useTheme'
 
 function App() {
     const {theme, toggleTheme} = useTheme()
@@ -18,7 +18,7 @@ function App() {
 
             <div>
             <input type="search" value={searchTerm} onChange={e => {setSearchTerm(e.target.value)}}
-            placeholder='Search...' className='border border-black/15 dark:border-white/15 px-2 py-1 rounded outline-0' />
+            placeholder='Поиск...' className='border border-black/15 dark:border-white/15 px-2 py-1 rounded outline-0' />
 
             <button onClick={toggleTheme} className='text-sm px-3 py-1 rounded border border-white/20
             dark:border-white/10 hover:bg-white hover:text-black dark:hover:bg-white/10 transition w-30'>

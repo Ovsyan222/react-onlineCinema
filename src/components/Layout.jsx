@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 export function Layout() {
-    const { pathname } = useLocation();
+    const { pathname } = useLocation()
 
     const isHomePage = useMemo(() => pathname === '/', [pathname])
 
@@ -14,13 +14,13 @@ export function Layout() {
                     <Link to='/'>
                     <img
                         src='/KinoPlus.png'
-                        alt="KinoPlus"
+                        alt="Cinema"
                         className="h-8 w-auto"
                     />
                     </Link>
                 </header>
             )}
-            <Outlet/>
+            <Outlet />
         </div>
-    );
+    )
 }
