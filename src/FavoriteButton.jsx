@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
-export function FavoriteButton() {
+function FavoriteButton() {
     const [isFavorive, setIsFavorite] = useState(false)
 
-    return <button onClick={() => setIsFavorite(!isFavorive)}>
+    return <button className="btn" onClick={() => setIsFavorite(!isFavorive)}>
         {isFavorive ? '❤️' : '🤍'}
     </button>
 }
+
+export default memo(FavoriteButton)

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { FavoriteButton } from "./FavoriteButton";
+import FavoriteButton from "./FavoriteButton";
 import { Modal } from "./components/ui/Modal";
+import { Link } from "react-router-dom";
 
 export function MovieCard({image, rating, youTubeTrailer}) {
     const [isOpenTrailer, setIsOpenTrailer] = useState(false)
@@ -14,12 +15,12 @@ export function MovieCard({image, rating, youTubeTrailer}) {
             {isOpenTrailer && (<Modal onClose={() => {
                 setIsOpenTrailer(false)
             }}>
-                <iframe width="560" height="315" 
+                <iframe width="560" height="315"
                 src={`https://www.youtube.com/embed/${youTubeTrailer}?&amp;controls=0`}
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
             </Modal>
         )}
@@ -30,7 +31,8 @@ export function MovieCard({image, rating, youTubeTrailer}) {
                 <FavoriteButton/>
                 <button className="btn" onClick={() => {
                     setIsOpenTrailer(true)
-                }}>❌</button>
+                }}>X</button>
+                <Link to={`/movie/${youTubeTrailer}`} className="btn">Z</Link>
             </div>
 
             <div className="absolute bottom-0 left-0 w-full
