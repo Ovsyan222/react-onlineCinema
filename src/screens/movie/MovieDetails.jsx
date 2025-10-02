@@ -11,7 +11,9 @@ export function MovieDetails() {
         return MOVIES.find(movie => movie.youTubeTrailer === id)
     }, [id])
     
-    if (!movie) return <p className="text-center mt-10 text-gray-400">Фильм не найден! 😢</p>
+    if (!movie) {
+        return <p className="text-center mt-10 text-gray-400">Фильм не найден! 😢</p>
+    }
     
     return (
         <div>
@@ -25,8 +27,8 @@ export function MovieDetails() {
                 <div className="flex-1 space-y-4">
                     <h1 className="text-4xl font-bold">{movie.name}</h1>
                     <p className="text-sm text-gray-400">IMDb {movie.rating}</p>
-                    <p className="text-gray-300 text-sm">Описание фильма:</p>
-                    <p className="text-gray-300 text-sm">{movie.description}</p>
+                    <p className="text-black-300 dark:text-white-400">Описание фильма:</p>
+                    <p className="text-black-300 dark:text-white-400">{movie.description}</p>
                     <Suspense fallbac={<div>Загрузка...</div>}>
                         <LazyMovieComments/>
                     </Suspense>

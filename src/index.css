@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer utilities {
   @keyframes fadeIn {
     from {
@@ -67,6 +69,7 @@ button.btn {
   color: white;
   transition: border-color 0.3s;
 }
+
 button.btn:hover {
   border-color: #ff1f1f;
 }

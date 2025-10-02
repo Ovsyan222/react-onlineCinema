@@ -12,7 +12,7 @@ function App() {
     const movies = MOVIES.filter(movie => movie.name.toLowerCase().includes(debouncedSearch.toLowerCase()))
 
     return (
-        <div className='min-h-screen w-full bg-white dark:bg-black text-black dark:text-white px-6 py-5'>
+        <div>
         <header className='mb-10 flex items-center justify-between'>
             <img src='/KinoPlus.png' alt='Cinema' className='h-8 w-auto'/>
 
@@ -20,9 +20,9 @@ function App() {
             <input type="search" value={searchTerm} onChange={e => {setSearchTerm(e.target.value)}}
             placeholder='Поиск...' className='border border-black/15 dark:border-white/15 px-2 py-1 rounded outline-0' />
 
-            <button onClick={toggleTheme} className='text-sm px-3 py-1 rounded border border-white/20
-            dark:border-white/10 hover:bg-white hover:text-black dark:hover:bg-white/10 transition w-30'>
-                {theme === 'dark' ? '🔆 Light' : '🌙 Dark'}
+            <button onClick={toggleTheme} className='text-sm px-3 py-1 rounded border border-black/20
+            dark:border-white/10 hover:bg-white hover:text-black dark:hover:text-white dark:hover:bg-white/10 transition w-30'>
+                {theme === 'dark' ? '🔆 Светлая' : '🌙 Темная'}
             </button>
             </div>
 
@@ -37,7 +37,7 @@ function App() {
                 youTubeTrailer={movie.youTubeTrailer}/>
             ))
             ) : (
-                <p>Movies not found!</p>
+                <p>Фильм не найден!</p>
             )
             }
         </main>
